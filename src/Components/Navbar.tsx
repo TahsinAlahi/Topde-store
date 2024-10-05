@@ -4,7 +4,7 @@ import MenuBar from "./MenuBar";
 
 function Navbar() {
   return (
-    <nav className="grid grid-cols-3  ">
+    <nav className="grid grid-cols-3 ">
       <Logo />
       <MenuBar />
       <ItemBar />
