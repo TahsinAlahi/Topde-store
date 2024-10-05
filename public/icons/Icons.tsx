@@ -1,15 +1,17 @@
-import React from "react";
-
 interface iconProps {
   className?: string;
   width?: string | number;
   height?: string | number;
+  color?: string;
+  strokeWidth?: string | number;
 }
 
 export function HeartIcon({
   className = "",
   width = 24,
   height = 24,
+  color = "white",
+  strokeWidth = 1,
 }: iconProps) {
   return (
     <svg
@@ -18,8 +20,8 @@ export function HeartIcon({
       height={height}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="1"
+      stroke={color}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`icon icon-tabler icons-tabler-outline icon-tabler-heart ${className}`}
@@ -34,6 +36,8 @@ export function HamburgerIcon({
   className = "",
   width = 24,
   height = 24,
+  color = "white",
+  strokeWidth = 1,
 }: iconProps) {
   return (
     <svg
@@ -42,8 +46,8 @@ export function HamburgerIcon({
       height={height}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
+      stroke={color}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`icon icon-tabler icons-tabler-outline icon-tabler-menu-2 ${className}`}
@@ -60,6 +64,8 @@ export function StarVoidIcon({
   className = "",
   width = 24,
   height = 24,
+  color = "white",
+  strokeWidth = 1,
 }: iconProps) {
   return (
     <svg
@@ -68,8 +74,8 @@ export function StarVoidIcon({
       height={height}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
+      stroke={color}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`icon icon-tabler icons-tabler-outline icon-tabler-star ${className}`}
