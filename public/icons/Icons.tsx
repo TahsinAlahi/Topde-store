@@ -60,13 +60,14 @@ export function HamburgerIcon({
   );
 }
 
-export function StarVoidIcon({
+export function StarIcon({
   className = "",
   width = 24,
   height = 24,
   color = "white",
   strokeWidth = 1,
-}: iconProps) {
+  fill = false,
+}: iconProps & { fill?: boolean }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +82,10 @@ export function StarVoidIcon({
       className={`icon icon-tabler icons-tabler-outline icon-tabler-star ${className}`}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+      <path
+        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+        fill={fill ? color : ""}
+      />
     </svg>
   );
 }

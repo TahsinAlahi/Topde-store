@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProductType } from "../Hooks/useFetchProducts";
 import { HeartIcon } from "../../public/icons/Icons";
+import StarRating from "./StarRating";
 
 function Product({ product }: { product: ProductType }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -32,7 +33,7 @@ function Product({ product }: { product: ProductType }) {
       </div>
       <div className="flex flex-col items-center gap-3 mt-6">
         <h3 className="text-center">{product.title}</h3>
-        <span>{product.rating.rate}</span>
+        <StarRating rating={product.rating.rate} />
       </div>
     </div>
   );
