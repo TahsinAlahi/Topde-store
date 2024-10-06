@@ -5,6 +5,13 @@ import StarRating from "./StarRating";
 
 function Product({ product }: { product: ProductType }) {
   const [isHovered, setIsHovered] = useState(false);
+  // TODO: add to provider later
+  const [cart, setCart] = useState<ProductType[]>([]);
+
+  function handleAddToCart() {
+    console.log(cart);
+    setCart((products: ProductType[]) => [...products, product]);
+  }
 
   const imageCardClass = isHovered
     ? "translate-y-0 opacity-100 "
@@ -12,7 +19,7 @@ function Product({ product }: { product: ProductType }) {
 
   return (
     <div
-      className="w-full aspect-square px-6 pb-8 grid grid-rows-2 gap-7 cursor-pointer"
+      className="w-full aspect-square px-6 pb-8 grid grid-rows-2 gap-7 cursor-pointer shadow-md"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -34,6 +41,15 @@ function Product({ product }: { product: ProductType }) {
       <div className="flex flex-col items-center gap-3 mt-6">
         <h3 className="text-center">{product.title}</h3>
         <StarRating rating={product.rating.rate} />
+        <div className="flex items-center justify-between w-3/4  mt-2">
+          <div
+            className="bg-yellow-400 px-4 py-1  rounded-sm shadow-md"
+            onClick={handleAddToCart}
+          >
+            Add To Cart
+          </div>
+          <div>${product.price}</div>
+        </div>
       </div>
     </div>
   );
