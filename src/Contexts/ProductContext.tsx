@@ -1,15 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { ProductType } from "../Hooks/useFetchProducts";
 
-interface ProductState {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  productInCurt: ProductType[] | any[];
-}
-
-interface ProductAction {
-  type: string;
-  payload: unknown;
-}
+import { ProductState, ProductAction, ProductContextType } from "../types";
 
 const initialState: ProductState = {
   productInCurt: [],
@@ -35,7 +26,9 @@ function reducer(state: ProductState, action: ProductAction) {
   }
 }
 
-const ProductContext = createContext<unknown>(null);
+const ProductContext = createContext<ProductContextType>(
+  {} as ProductContextType
+);
 
 function ProductProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer<

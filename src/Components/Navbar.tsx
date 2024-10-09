@@ -5,7 +5,6 @@ import MenuBar from "./MenuBar";
 
 function Navbar() {
   const scroll = useScrollHandler(150);
-  console.log(scroll);
 
   return (
     <nav

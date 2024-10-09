@@ -1,19 +1,7 @@
 import { useEffect, useState } from "react";
+import { ProductType } from "../types";
 
 const URL = `https://fakestoreapi.com/products?limit=6`;
-
-export interface ProductType {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
 
 function useFetchProducts(): [ProductType[] | [], boolean] {
   const [products, setProducts] = useState([]);

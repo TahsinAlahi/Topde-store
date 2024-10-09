@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ProductType } from "../Hooks/useFetchProducts";
 import { HeartIcon } from "../../public/icons/Icons";
 import StarRating from "./StarRating";
+import { ProductType } from "../types";
 
 function Product({ product }: { product: ProductType }) {
   const [isHovered, setIsHovered] = useState(false);

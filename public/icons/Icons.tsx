@@ -1,10 +1,4 @@
-interface iconProps {
-  className?: string;
-  width?: string | number;
-  height?: string | number;
-  color?: string;
-  strokeWidth?: string | number;
-}
+import { iconProps } from "../../src/types";
 
 export function HeartIcon({
   className = "",
