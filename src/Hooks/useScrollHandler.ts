@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
-function useScrollHandler() {
+function useScrollHandler(vhAmount: number = 100) {
   const [scroll, setScroll] = useState(false);
   const prevScrollRef = useRef(scroll);
 
   useEffect(() => {
     function onScroll() {
-      const scrollCheck = window.scrollY > window.innerHeight / 100;
+      // 1vh is equivalent to (window.innerHeight * vhAmount) / 100
+      const scrollCheck =
+        window.scrollY > (window.innerHeight * vhAmount) / 100;
 
       if (scrollCheck !== prevScrollRef.current) {
         setScroll(scrollCheck);
@@ -17,7 +19,7 @@ function useScrollHandler() {
     document.addEventListener("scroll", onScroll);
 
     return () => document.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [vhAmount]);
 
   return scroll;
 }

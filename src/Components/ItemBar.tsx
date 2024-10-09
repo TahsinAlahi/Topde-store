@@ -1,9 +1,9 @@
 import { HeartIcon, HamburgerIcon } from "../../public/icons/Icons";
 import DropDownItem from "./DropDownItem";
 
-function ItemBar() {
+function ItemBar({ className = "" }: { className?: string }) {
   return (
-    <div className="flex justify-end items-start gap-4">
+    <div className={`flex justify-end items-start gap-4 ${className}`}>
       <DropDownItem
         title={
           <div>

@@ -2,7 +2,7 @@ import DropDownItem from "./DropDownItem";
 
 function MenuBar() {
   return (
-    <div className="flex justify-between items-start  min-w-96">
+    <div className="flex justify-between items-start  min-w-96 text-inherit">
       <DropDownItem title="Home">
         <div>Main Home</div>
         <div>Minimal Home</div>

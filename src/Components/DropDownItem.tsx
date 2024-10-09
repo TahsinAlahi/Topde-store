@@ -3,9 +3,10 @@ import React, { useState } from "react";
 type DropDownItemProps = {
   title: string | React.ReactNode;
   children?: React.ReactNode;
+  className?: string;
 };
 
-function DropDownItem({ title, children }: DropDownItemProps) {
+function DropDownItem({ title, children, className = "" }: DropDownItemProps) {
   const [open, setOpen] = useState(false);
 
   // none
@@ -17,11 +18,11 @@ function DropDownItem({ title, children }: DropDownItemProps) {
 
   return (
     <li
-      className="list-none relative  "
+      className={`list-none relative ${className}`}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <div className="font-light pb-7 cursor-pointer">{title}</div>
+      <div className="font-light mb-2 cursor-pointer">{title}</div>
       {<div className={` menu-dropdown ${hoverClass}`}>{children}</div>}
     </li>
   );

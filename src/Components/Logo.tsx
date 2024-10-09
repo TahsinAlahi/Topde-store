@@ -1,6 +1,6 @@
 function Logo() {
   return (
-    <div className="text-white text-3xl font-bold tracking-widest">TOPDE</div>
+    <div className="text-inherit text-3xl font-bold tracking-widest">TOPDE</div>
   );
 }
 

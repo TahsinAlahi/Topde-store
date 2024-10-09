@@ -4,14 +4,22 @@ import Logo from "./Logo";
 import MenuBar from "./MenuBar";
 
 function Navbar() {
-  const scroll = useScrollHandler();
+  const scroll = useScrollHandler(150);
   console.log(scroll);
 
   return (
-    <nav className="grid grid-cols-3 ">
+    <nav
+      className={`grid grid-cols-3 px-8 py-4 ${
+        scroll
+          ? "bg-white fixed z-10 top-0 text-black w-full transition duration-200 shadow-md"
+          : "bg-transparent"
+      }`}
+    >
       <Logo />
       <MenuBar />
-      <ItemBar />
+      <ItemBar
+        className={scroll ? "pointer-events-none text-white select-none" : ""}
+      />
     </nav>
   );
 }
