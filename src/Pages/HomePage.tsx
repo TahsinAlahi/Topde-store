@@ -1,3 +1,4 @@
+import Concept from "../Components/Concept";
 import Navbar from "../Components/Navbar";
 import Products from "../Components/Products";
 
@@ -15,6 +16,7 @@ function HomePage() {
       </header>
       <main className="">
         <Products />
+        <Concept />
       </main>
     </>
   );

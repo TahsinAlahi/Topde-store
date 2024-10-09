@@ -16,6 +16,10 @@
   @apply absolute left-1/2 -translate-x-1/2 -bottom-10   text-white  transition-all duration-300 ease-in-out;
 }
 
+.concept {
+  @apply flex flex-col items-center text-center text-white justify-center gap-10 h-screen w-full bg-[url('images/bg-concept.jpg')] bg-cover bg-center bg-blend-darken bg-black bg-opacity-75;
+}
+
 .loader {
   width: 10%;
   aspect-ratio: 1;
