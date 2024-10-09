@@ -1,4 +1,5 @@
 import Concept from "../Components/Concept";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Products from "../Components/Products";
 
@@ -18,6 +19,7 @@ function HomePage() {
         <Products />
         <Concept />
       </main>
+      <Footer />
     </>
   );
 }
