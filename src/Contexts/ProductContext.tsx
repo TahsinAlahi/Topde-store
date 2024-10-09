@@ -1,9 +1,15 @@
 import React, { createContext, useContext, useReducer } from "react";
 
-import { ProductState, ProductAction, ProductContextType } from "../types";
+import {
+  ProductState,
+  ProductAction,
+  ProductContextType,
+  ProductType,
+} from "../types";
 
 const initialState: ProductState = {
   productInCurt: [],
+  totalPrice: 0,
 };
 
 function reducer(state: ProductState, action: ProductAction) {
@@ -12,13 +18,15 @@ function reducer(state: ProductState, action: ProductAction) {
       return {
         ...state,
         productInCurt: [...state.productInCurt, action.payload],
+        totalPrice: state.totalPrice + (action.payload as ProductType).price,
       };
     case "remove_from_cart":
       return {
         ...state,
         productInCurt: state.productInCurt.filter(
-          (product) => product.id !== action.payload
+          (product) => product.id !== (action.payload as ProductType).id
         ),
+        totalPrice: state.totalPrice - (action.payload as ProductType).price,
       };
 
     default:

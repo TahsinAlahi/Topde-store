@@ -2,15 +2,14 @@ import { useState } from "react";
 import { HeartIcon } from "../../public/icons/Icons";
 import StarRating from "./StarRating";
 import { ProductType } from "../types";
+import { useProduct } from "../Contexts/ProductContext";
 
 function Product({ product }: { product: ProductType }) {
   const [isHovered, setIsHovered] = useState(false);
-  // TODO: add to provider later
-  const [cart, setCart] = useState<ProductType[]>([]);
+  const { dispatch } = useProduct();
 
   function handleAddToCart() {
-    console.log(cart);
-    setCart((products: ProductType[]) => [...products, product]);
+    dispatch({ type: "add_to_cart", payload: product });
   }
 
   const imageCardClass = isHovered

@@ -9,7 +9,7 @@
 }
 
 .menu-dropdown {
-  @apply absolute bg-black bg-blend-darken bg-opacity-100 text-white p-6 top-full left-0 transition-all duration-300 ease-in-out  whitespace-nowrap flex flex-col gap-2;
+  @apply absolute bg-black bg-blend-darken bg-opacity-100 text-white p-6 top-full transition-all duration-300 ease-in-out  whitespace-nowrap flex flex-col gap-2;
 }
 
 .image-card {

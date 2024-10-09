@@ -22,6 +22,7 @@ export interface ProductType {
 export interface ProductState {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   productInCurt: ProductType[] | any[];
+  totalPrice: number;
 }
 
 export interface ProductAction {
